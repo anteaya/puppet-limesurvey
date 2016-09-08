@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/martialblog/puppet-limesurvey.svg?branch=master)](https://travis-ci.org/martialblog/puppet-limesurvey)
+
 # limesurvey
 
 #### Table of Contents
