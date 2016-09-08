@@ -1,0 +1,14 @@
+---
+limesurvey::archive_path: '/tmp/limesurvey.tar.gz'
+limesurvey::dir_name: 'limesurvey'
+limesurvey::file_name: '%{::limesurvey::dir_name}.tar.gz'
+limesurvey::dbhost: 'localhost'
+limesurvey::download_url: 'https://www.limesurvey.org/stable-release?download=1853:limesurvey2514%20160908targz'
+limesurvey::extract_path: '/opt/'
+limesurvey::manage_database: true
+limesurvey::manage_webserver: true
+limesurvey::manage_php: true
+limesurvey::mpm_module: 'prefork'
+limesurvey::runtime_dir_mode: '0766'
+limesurvey::vhost_name: 'limesurvey'
+limesurvey::vhost_port: '80'

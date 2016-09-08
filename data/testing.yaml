@@ -1,0 +1,5 @@
+---
+limesurvey::dbname: 'limesurvey'
+limesurvey::dbpassword: 'foobar'
+limesurvey::dbuser: 'limeuser'
+limesurvey::sql_root_password: 'foobar'

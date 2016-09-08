@@ -1,0 +1,18 @@
+---
+limesurvey::www_group: 'apache'
+limesurvey::www_user: 'apache'
+limesurvey::php_packages:
+  epel-release:
+    ensure: present
+  php:
+    ensure: present
+  php-mcrypt:
+    ensure: present
+  php-gd:
+    ensure: present
+  php-ldap:
+    ensure: present
+  php-mysql:
+    ensure: present
+  php-imap:
+    ensure: present

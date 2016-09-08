@@ -1,0 +1,17 @@
+HOSTS:
+  debian-7-x64:
+    docker_container_name: puppet_limesurvey_debian
+    default_apply_opts:
+      order: random
+      strict_variables:
+    platform: debian-7-amd64
+    hypervisor : docker
+    image: debian:7
+    docker_preserve_image: true
+    docker_cmd: '["/sbin/init"]'
+    docker_image_commands:
+      - 'apt-get install -y cron locales-all net-tools wget git-core'
+      - 'rm -f /usr/sbin/policy-rc.d'
+CONFIG:
+  type: aio
+

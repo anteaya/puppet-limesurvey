@@ -1,0 +1,18 @@
+---
+limesurvey::www_group: 'www-data'
+limesurvey::www_user: 'www-data'
+limesurvey::php_packages:
+  php5:
+    ensure: present
+  php5-mcrypt:
+    ensure: present
+  php5-gd:
+    ensure: present
+  php5-ldap:
+    ensure: present
+  php5-mysql:
+    ensure: present
+  php5-imap:
+    ensure: present
+  libapache2-mod-php5:
+    ensure: present
