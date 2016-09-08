@@ -1,7 +1,7 @@
 {
-  "name": "martiablog-limesurvey",
+  "name": "martialblog-limesurvey",
   "version": "0.1.0",
-  "author": "martiablog",
+  "author": "martialblog",
   "summary": "Installation and Configuration of Limesurvey",
   "license": "Apache-2.0",
   "source": "https://github.com/martialblog/puppet-limesurvey",
