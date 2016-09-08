@@ -6,8 +6,7 @@
 
 ## Running Tests
 
-After cloning the repository the testing environment should be set up on the
-local machine:
+After cloning the repository the testing environment should be set up on the local machine:
 
 ```
 $ bundle install --path vendor/bundle
@@ -22,7 +21,17 @@ includes:
   * unit-tests (with `rspec-puppet`)
   * acceptance-tests (with `beaker-rspec`)
 
+Check the .travis.yml for details.
+
 ## Coding Standards
 
-* All variables are defined in the base manifest (init.pp)
-* No more than 140 characters per line
+* All variables are defined in the base manifest (init.pp).
+* No more than 140 characters per line.
+
+## Commits
+
+* Fork it, Branch it, Test it, Pull Request it, Technologic.
+* Logical commit units.
+* Nice clean commit messages.
+* Check for whitespaces. I hate whitespaces.
+* New Features equals new tests and new documentation.

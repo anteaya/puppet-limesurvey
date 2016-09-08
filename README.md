@@ -12,7 +12,7 @@
 
 ## Description
 
-This module installs Limesurvey.
+This module installs Limesurvey from the limesurvey.org website..
 
 Optionally MySQL and Apache2 are installed and managed by this module. However, both classes can be overwritten.
 
@@ -21,7 +21,7 @@ Optionally MySQL and Apache2 are installed and managed by this module. However, 
 ### Beginning with limesurvey
 
 Basically this module downloads the code from limesurey.org and places it into the specified directory.
-Without the database class included you need to install and manage the database by yourself.
+Without the database class included you need to install and manage the database by yourself. Same for the websever and PHP.
 
 ## Usage
 
@@ -56,7 +56,9 @@ For details on parameters see manifests
 This module has been tested on:
 * Debian 7, 8
 
-The CentOS Build needs fixing but the module should work.
+Using Puppet >=4.5
+
+The CentOS Build needs fixing, but the module should work.
 
 ## Development
 
