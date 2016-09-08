@@ -1,7 +1,6 @@
 ---
 limesurvey::archive_path: '/tmp/limesurvey.tar.gz'
 limesurvey::dir_name: 'limesurvey'
-limesurvey::file_name: '%{::limesurvey::dir_name}.tar.gz'
 limesurvey::dbhost: 'localhost'
 limesurvey::download_url: 'https://www.limesurvey.org/stable-release?download=1853:limesurvey2514%20160908targz'
 limesurvey::extract_path: '/opt/'

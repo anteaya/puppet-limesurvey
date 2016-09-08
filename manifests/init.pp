@@ -73,7 +73,6 @@ class limesurvey (
   String $dir_name,
   String $download_url,
   String $extract_path,
-  String $file_name,
   String $runtime_dir_mode,
   String $www_group,
   String $www_user,
