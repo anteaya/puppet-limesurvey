@@ -1,9 +1,8 @@
 ---
-limesurvey::archive_path: '/tmp/limesurvey.tar.gz'
-limesurvey::dir_name: 'limesurvey'
 limesurvey::dbhost: 'localhost'
-limesurvey::download_url: 'https://www.limesurvey.org/stable-release?download=1853:limesurvey2514%20160908targz'
-limesurvey::extract_path: '/opt/'
+limesurvey::download_url: 'https://github.com/LimeSurvey/LimeSurvey/archive/'
+limesurvey::version: '2.51.4_160908'
+limesurvey::install_path: '/opt/limesurvey'
 limesurvey::manage_database: true
 limesurvey::manage_webserver: true
 limesurvey::manage_php: true

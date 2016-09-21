@@ -7,21 +7,14 @@
 # Parameters
 # ----------
 #
-# * `archive_path`
-# Name of path to extract to
-#
-# * `dir_name`
-# Name of directory to extract to
-#
 # * `install_path`
 # Combination of archive_path and dir_name
 #
 # * `download_url`
 # Where to download the limesurey code from.
-# Note: They seem to change that quite often. Be aware.
 #
-# * `extract_path`
-# Target folder path to extract archive
+# * `version`
+# What version to download.
 #
 # * `runtime_dir_mode`
 # Mode of the limesurey runtime directory. Default is 0766,
@@ -69,10 +62,9 @@
 #
 class limesurvey (
 
-  String $archive_path,
-  String $dir_name,
+  String $install_path,
   String $download_url,
-  String $extract_path,
+  String $version,
   String $runtime_dir_mode,
   String $www_group,
   String $www_user,
@@ -95,7 +87,6 @@ class limesurvey (
   String $webserver_class   = 'limesurvey::webserver',
   String $php_class         = 'limesurvey::php',
 
-  String $install_path      = "${extract_path}${dir_name}",
   String $vhost_docroot     = $install_path,
 
 ) {

@@ -6,9 +6,6 @@
 # Parameters
 # ----------
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-#
 # Examples
 # --------
 #
@@ -28,9 +25,8 @@
 #
 class limesurvey::extract (
 
-  String $archive_path     = $limesurvey::archive_path,
   String $download_url     = $limesurvey::download_url,
-  String $extract_path     = $limesurvey::extract_path,
+  String $version          = $limesurvey::version,
   String $install_path     = $limesurvey::install_path,
   String $runtime_dir_mode = $limesurvey::runtime_dir_mode,
   String $www_group        = $limesurvey::www_group,
@@ -44,21 +40,41 @@ class limesurvey::extract (
     group  => $www_group,
   }
 
-  archive { $archive_path:
-    ensure       => present,
-    extract      => true,
-    extract_path => $extract_path,
-    source       => $download_url,
-    creates      => "${install_path}/tmp",
-    user         => $www_user,
-    group        => $www_group,
-    require      => File[$install_path],
+  exec { 'limesurvey-download':
+    path    => '/bin:/usr/bin',
+    creates => "${install_path}/tmp/runtime",
+    command => "bash -c 'cd /tmp; wget ${download_url}${version}.tar.gz'",
+    require => File[$install_path],
+    user    => $www_user,
+  }
+
+  exec { 'limesurvey-unzip':
+    path    => '/bin:/usr/bin',
+    cwd     => '/tmp',
+    creates => "${install_path}/tmp/runtime",
+    command => "bash -c 'cd /tmp; tar zxf /tmp/${version}.tar.gz'",
+    require => Exec['limesurvey-download'],
+    user    => $www_user,
+  }
+
+  exec { 'limesurvey-copy':
+    path    => '/bin:/usr/bin',
+    cwd     => '/tmp',
+    creates => "${install_path}/tmp/runtime",
+    command => "bash -c 'cp -rf /tmp/LimeSurvey-${version}/* ${install_path}'",
+    require => Exec['limesurvey-unzip'],
+    user    => $www_user,
+  }
+
+  file { "/tmp/${version}.tar.gz":
+    ensure  => absent,
+    require => Exec['limesurvey-copy'],
   }
 
   file { "${install_path}/tmp/runtime/":
     ensure  => directory,
     mode    => $runtime_dir_mode,
-    require => File[$install_path],
+    require => Exec['limesurvey-copy'],
   }
 
 }
