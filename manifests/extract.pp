@@ -52,29 +52,20 @@ class limesurvey::extract (
     path    => '/bin:/usr/bin',
     cwd     => '/tmp',
     creates => "${install_path}/tmp/runtime",
-    command => "bash -c 'cd /tmp; tar zxf /tmp/${version}.tar.gz'",
+    command => "bash -c 'cd /tmp; tar zxf /tmp/${version}.tar.gz -C ${install_path} --strip-components=1'",
     require => Exec['limesurvey-download'],
-    user    => $www_user,
-  }
-
-  exec { 'limesurvey-copy':
-    path    => '/bin:/usr/bin',
-    cwd     => '/tmp',
-    creates => "${install_path}/tmp/runtime",
-    command => "bash -c 'cp -rf /tmp/LimeSurvey-${version}/* ${install_path}'",
-    require => Exec['limesurvey-unzip'],
     user    => $www_user,
   }
 
   file { "/tmp/${version}.tar.gz":
     ensure  => absent,
-    require => Exec['limesurvey-copy'],
+    require => Exec['limesurvey-unzip'],
   }
 
   file { "${install_path}/tmp/runtime/":
     ensure  => directory,
     mode    => $runtime_dir_mode,
-    require => Exec['limesurvey-copy'],
+    require => Exec['limesurvey-unzip'],
   }
 
 }

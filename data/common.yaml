@@ -1,7 +1,7 @@
 ---
 limesurvey::dbhost: 'localhost'
 limesurvey::download_url: 'https://github.com/LimeSurvey/LimeSurvey/archive/'
-limesurvey::version: '2.51.4_160908'
+limesurvey::version: '2.57.0+161202'
 limesurvey::install_path: '/opt/limesurvey'
 limesurvey::manage_database: true
 limesurvey::manage_webserver: true
