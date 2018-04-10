@@ -62,32 +62,32 @@
 #
 class limesurvey (
 
-  String $install_path,
-  String $download_url,
-  String $version,
-  String $runtime_dir_mode,
-  String $www_group,
-  String $www_user,
+  $install_path,
+  $download_url,
+  $version,
+  $runtime_dir_mode,
+  $www_group,
+  $www_user,
 
-  Boolean $manage_database,
-  Boolean $manage_webserver,
-  Boolean $manage_php,
+  $manage_database,
+  $manage_webserver,
+  $manage_php,
 
-  Optional[String] $dbuser            = undef,
-  Optional[String] $sql_root_password = undef,
-  Optional[String] $vhost_name        = undef,
-  Optional[String] $vhost_port        = undef,
-  Optional[String] $mpm_module        = undef,
-  Optional[Hash] $php_packages        = undef,
-  Optional[String] $dbhost            = undef,
-  Optional[String] $dbname            = undef,
-  Optional[String] $dbpassword        = undef,
+  $dbuser            = undef,
+  $sql_root_password = undef,
+  $vhost_name        = undef,
+  $vhost_port        = undef,
+  $mpm_module        = undef,
+  $php_packages        = undef,
+  $dbhost            = undef,
+  $dbname            = undef,
+  $dbpassword        = undef,
 
-  String $database_class    = 'limesurvey::database',
-  String $webserver_class   = 'limesurvey::webserver',
-  String $php_class         = 'limesurvey::php',
+  $database_class    = 'limesurvey::database',
+  $webserver_class   = 'limesurvey::webserver',
+  $php_class         = 'limesurvey::php',
 
-  String $vhost_docroot     = $install_path,
+  $vhost_docroot     = $install_path,
 
 ) {
 
