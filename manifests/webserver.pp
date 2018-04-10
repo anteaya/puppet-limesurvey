@@ -37,10 +37,10 @@
 #
 class limesurvey::webserver (
 
-  String $mpm_module    = $limesurvey::mpm_module,
-  String $vhost_docroot = $limesurvey::vhost_docroot,
-  String $vhost_name    = $limesurvey::vhost_name,
-  String $vhost_port    = $limesurvey::vhost_port,
+  $mpm_module    = $limesurvey::mpm_module,
+  $vhost_docroot = $limesurvey::vhost_docroot,
+  $vhost_name    = $limesurvey::vhost_name,
+  $vhost_port    = $limesurvey::vhost_port,
 
 ) {
 
