@@ -45,11 +45,11 @@
 #
 class limesurvey::database (
 
-  String $dbhost            = $limesurvey::dbhost,
-  String $dbname            = $limesurvey::dbname,
-  String $dbpassword        = $limesurvey::dbpassword,
-  String $dbuser            = $limesurvey::dbuser,
-  String $sql_root_password = $limesurvey::sql_root_password,
+  $dbhost            = $limesurvey::dbhost,
+  $dbname            = $limesurvey::dbname,
+  $dbpassword        = $limesurvey::dbpassword,
+  $dbuser            = $limesurvey::dbuser,
+  $sql_root_password = $limesurvey::sql_root_password,
 
 ) {
 
