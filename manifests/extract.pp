@@ -25,12 +25,12 @@
 #
 class limesurvey::extract (
 
-  String $download_url     = $limesurvey::download_url,
-  String $version          = $limesurvey::version,
-  String $install_path     = $limesurvey::install_path,
-  String $runtime_dir_mode = $limesurvey::runtime_dir_mode,
-  String $www_group        = $limesurvey::www_group,
-  String $www_user         = $limesurvey::www_user,
+  $download_url     = $limesurvey::download_url,
+  $version          = $limesurvey::version,
+  $install_path     = $limesurvey::install_path,
+  $runtime_dir_mode = $limesurvey::runtime_dir_mode,
+  $www_group        = $limesurvey::www_group,
+  $www_user         = $limesurvey::www_user,
 
 ) {
 
