@@ -28,7 +28,7 @@
 #
 class limesurvey::php (
 
-  Hash $php_packages    = $limesurvey::php_packages,
+  $php_packages    = $limesurvey::php_packages,
 
 ) {
 
